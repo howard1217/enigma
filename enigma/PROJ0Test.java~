@@ -1,0 +1,72 @@
+/** java HW1Test should test the methods defined in Progs.
+ *  @author Chia-Hao Chiao
+ */
+public class HW1Test {
+
+    /** Run all tests. */
+    public static void main(String[] args) {
+        report("factorSum", testFactorSum());
+        report("printSociablePairs", testPrintSociablePairs());
+        report("dcatenate", testDcatenate());
+        report("sublist", testSublist());
+        report("dsublist", testDsublist());
+    }
+
+    /** Print message that test NAME has (if ISOK) or else has not
+     *  passed. */
+    private static void report(String name, boolean isOK) {
+        if (isOK) {
+            System.out.printf("%s OK.%n", name);
+        } else {
+            System.out.printf("%s FAILS.%n", name);
+        }
+    }
+
+    /** Return true iff factorSum passes its tests. */
+    private static boolean testFactorSum() {
+        if (Progs.factorSum(5) != 1) {
+            return false;
+        }
+        if (Progs.factorSum(220) != 284) {
+            return false;
+        }
+        if (Progs.factorSum(284) != 220) {
+            return false;
+        }
+        return true;
+    }
+
+    /** Return true iff printSociablePairs passes its tests. */
+    private static boolean testPrintSociablePairs() {
+        Progs.printSociablePairs(500);
+        Progs.printSociablePairs(6000);
+        return true;
+    }
+
+    /** Return true iff dcantenate passes its tests. */
+    private static boolean testDcatenate() {
+        IntList A = IntList.list(3, 4);
+        IntList B = IntList.list(3);
+        IntList C = IntList.list(4);
+        return Progs.dcatenate(B, C).equals(A);
+    }
+
+    /** Return true iff sublist passes its tests. */
+    private static boolean testSublist() {
+        IntList A = IntList.list(0, 1, 2, 3, 4);
+        int start = 2;
+        int len = 2;
+        IntList result = IntList.list(2, 3);
+        return Progs.sublist(A, start, len).equals(result);
+    }
+
+    /** Return true iff dsublist passes its tests. */
+    private static boolean testDsublist() {
+        IntList A = IntList.list(0, 1, 2, 3, 4);
+        int start = 2;
+        int len = 2;
+        IntList result = IntList.list(2, 3);
+        return Progs.sublist(A, start, len).equals(result);
+    }
+
+}

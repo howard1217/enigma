@@ -1,0 +1,15 @@
+K 10
+svn:ignore
+V 120
+
+
+FixedRotor.class
+Machine.class
+Main.class
+PROJ0Test.class
+PermutationData.class
+Reflector.class
+Rotor.class
+step1.inp
+
+END
